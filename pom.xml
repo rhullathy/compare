@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.vw.compare</groupId>
+	<artifactId>compare-service</artifactId>
+	<version>1.9-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>compare-service</name>
+	<description />
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<tagBase>http://repo.vw.com/svn/vwgoa/services/s2f/product-compare/app/tags/</tagBase>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<scm>
+		<connection>scm:svn:http://repo.vw.com/svn/vwgoa/services/s2f/product-compare/app/trunk</connection>
+		<url>http://repo.vw.com/svn/vwgoa/services/s2f/product-compare/app/trunk</url>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>Central</name>
+			<url>http://jira.vw.com/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>http://jira.vw.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<properties>
+
+		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+
+                <maven.test.skip>true</maven.test.skip>	
+
+	</properties>
+
+
+	<modules>
+		<module>compare-war</module>
+		<module>compare-service-jar</module>
+	</modules>
+</project>
